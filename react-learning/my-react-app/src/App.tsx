@@ -1,5 +1,9 @@
+// import { useState } from "react"
+
+import { ValList } from "./pages/valList"
+
 function App() {
-  return null
+  return <ValList/>
 }
 
 export default App
