@@ -5,7 +5,14 @@ GET  http://localhost:3000/api/test
 POST http://localhost:3000/api/test
 Content-Type: application/json
 
-{
-  "name": "didi",
-  "age": 18
-}
+
+  [
+    {
+        "id": 0,
+        "content": "test content_1"
+    },
+    {
+        "id": 1,
+        "content": "test content_2"
+    }
+  ]

@@ -1,21 +1,29 @@
 import express, { response } from "express";
+import cors from "cors"
 const app = express(); 
 app.use(express.json());
-const PORT = 3000;
+app.use(cors());
+const PORT = process.env.PORT || 3000;
+
+let valList = [
+    {
+        id: 0,
+        content: 'test content_1'
+    },
+    {
+        id: 1,
+        content: 'test content_2'
+    }
+];
 
 app.get('/api/test', (request,response) => {
-    response.send('hello from server.')
+    response.json(valList)
 })
 
 app.post('/api/test', (request, response) => {
-    console.log(request.body,request.headers)
-    response.json({
-        name: 'test',
-        data: {
-            res: 1,
-            rep: 2
-        }
-    })
+    console.log(request.body)
+    valList = request.body
+    response.json(request.body)
 })
 
 app.listen(PORT, () => {
