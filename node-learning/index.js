@@ -1,7 +1,7 @@
 import express, { response } from "express";
 import mongoose from "mongoose"
-import { configDotenv } from "dotenv";
-import note from 'model/note.js'
+import 'dotenv/config'
+import Note from './model/note.js'
 
 const app = express(); 
 const PORT = process.env.PORT;
