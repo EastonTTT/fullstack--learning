@@ -1,23 +1,21 @@
 import express, { response } from "express";
-import cors from "cors"
-const app = express(); 
-app.use(express.json());
-app.use(cors());
-const PORT = process.env.PORT || 3000;
+import mongoose from "mongoose"
+import { configDotenv } from "dotenv";
+import note from 'model/note.js'
 
-let valList = [
-    {
-        id: 0,
-        content: 'test content_1'
-    },
-    {
-        id: 1,
-        content: 'test content_2'
-    }
-];
+const app = express(); 
+const PORT = process.env.PORT;
+const password = process.argv[2]
+const url = ``
+
+app.use(express.json());
+app.use(express.static('dist'))
 
 app.get('/api/test', (request,response) => {
-    response.json(valList)
+    Note.find({}).then(result => {
+      console.log(result)
+      response.json(result)
+    })
 })
 
 app.post('/api/test', (request, response) => {
