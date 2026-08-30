@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = 'http://localhost:3000/api';
+const baseUrl = '/api';
 
 const get = async (url: string) => {
     return axios.get(`${baseUrl}${url}`).then(reponse => reponse.data);
