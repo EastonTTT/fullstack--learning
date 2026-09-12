@@ -13,15 +13,25 @@ app.use(express.static('dist'))
 
 app.get('/api/test', (request,response) => {
     Note.find({}).then(result => {
-      console.log(result)
+    //   console.log(result)
       response.json(result)
     })
 })
 
 app.post('/api/test', (request, response) => {
-    console.log(request.body)
-    valList = request.body
-    response.json(request.body)
+    const body = request.body
+    console.log('request body: ',body)
+    if(!body){
+        response.status(400).json({error: 'missing content!'})
+    }else{
+        const note = new Note({
+            ...body
+        })
+        note.save().then(Note.find({}).then(result => {
+        //   console.log(result)
+        response.json(result)
+        }))
+    }
 })
 
 app.listen(PORT, () => {
