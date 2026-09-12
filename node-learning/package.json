@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch index.js",
     "build:ui": "rm -rf dist && npm --prefix ../react-learning/my-react-app run build && cp -R ../react-learning/my-react-app/dist ./dist",
-    "deploy:full": "npm run build:ui && git add . && git commit -m ui-build && git push"
+    "deploy": "npm run build:ui && git add . && git commit -m ui-build && git push"
   },
   "dependencies": {
     "dotenv": "^17.4.2",
