@@ -1,9 +1,9 @@
 // import { useState } from "react"
 
-import { ValList } from "./pages/valList"
+import { ValList } from './pages/valList'
 
 function App() {
-  return <ValList/>
+  return <ValList />
 }
 
 export default App

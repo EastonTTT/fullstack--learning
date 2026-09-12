@@ -1,8 +1,8 @@
-export interface ListProps  {
-    valList: Val[]
+export interface ListProps {
+  valList: Val[]
 }
 
-export interface Val  {
-    content: string | null,
-    id: number,
+export interface Val {
+  id: number
+  content: string | null
 }
