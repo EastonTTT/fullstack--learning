@@ -9,4 +9,11 @@ const post = async (url: string, data: unknown) => {
   return axios.post(`${baseUrl}${url}`, data).then((response) => response.data)
 }
 
-export { get, post }
+const put = async (url: string, data: unknown) => {
+  return axios.put(`${baseUrl}${url}`, data).then((response) => response.data)
+}
+
+const deleteRequest = async (url: string) => {
+  return axios.delete(`${baseUrl}${url}`).then((response) => response.data)
+}
+export { get, post, put, deleteRequest }
